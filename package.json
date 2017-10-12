@@ -1,0 +1,17 @@
+{
+  "name": "thepricetracker-bookmarklet",
+  "version": "0.0.1",
+  "description": "The bookmarklet for thepricetracker.com, used to save prices on websites. ",
+  "main": "dist/bookmarklet.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "bookmarklet ./src/bookmarklet.js ./dist/bookmarklet.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "Unlicense",
+  "devDependencies": {
+    "bookmarklet": "0.0.6",
+    "express": "^4.16.2"
+  }
+}

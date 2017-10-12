@@ -1,0 +1,208 @@
+/* resets */
+#price-tracker-panel * {
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
+    padding:0;
+    margin:0;
+}
+
+#price-tracker-panel div {
+    display:block;
+}
+
+#price-tracker-panel span {
+    display:inline;
+}
+
+#price-tracker-panel {
+    border: 1px solid #666;
+    background-color: #fff;
+	font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #222;
+	-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+	-webkit-text-size-adjust: 100%;
+    width: 320px;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    z-index: 999999;
+    padding:10px;
+    box-shadow:0 2px 9px 2px #333;
+}
+
+#price-tracker-panel #price-tracker-loading {
+    width:340px;
+    height:100%;
+    background:#fff;
+    position:absolute;
+    left:0;
+    top:0;
+    text-align:center;
+}
+
+#price-tracker-panel #price-tracker-loading img {
+    margin-top:200px;
+}
+
+#price-tracker-panel #price-tracker-title {
+    font-size:18px;
+    text-align:center;
+    cursor:move;
+}
+
+#price-tracker-panel #price-tracker-close {
+    position:absolute;
+    top:0px;
+    right:0;
+    background:#D34B4B;
+    font-size:16px;
+    line-height:1;
+    cursor:pointer;
+    border:1px solid #B85353;
+    color:#eee;
+    text-shadow: 1px 0 #999;
+    padding:3px 10px;
+}
+
+#price-tracker-panel #price-tracker-close:hover {
+    background-color:#AD4747;
+}
+
+#price-tracker-panel label,
+#price-tracker-panel .label {
+    font-weight:bold;
+    color:#222;
+    background:none;
+    text-align:left;
+}
+
+#price-tracker-panel #price-tracker-name-block input {
+    width:100%;
+}
+
+#price-tracker-panel #price-tracker-name-block textarea {
+    width:100%;
+    height:60px;
+    resize:none;
+}
+
+#price-tracker-panel .price-tracker-row {
+    margin-top:10px;
+}
+
+#price-tracker-panel .price-tracker-direction {
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    cursor: pointer;
+    background:transparent url(https://thepricetracker.com/images/arrows.png) no-repeat left center;
+    text-indent:-999em;
+}
+
+#price-tracker-panel .price-tracker-direction.right-direction {
+    background-position:right center;
+}
+
+#price-tracker-panel #price-tracker-image-block {
+    float:left;
+    display:inline;
+    width:100px;
+    margin-right:10px;
+    margin-top:15px;
+    text-align:center;
+}
+
+#price-tracker-panel #price-tracker-image-container {
+    width:100px;
+    height:100px;
+    overflow:hidden;
+}
+
+#price-tracker-panel #price-tracker-name-block {
+    float:left;
+    display:inline;
+    width:200px;
+}
+
+#price-tracker-panel #price-tracker-price-block {
+    width:auto;
+    clear:both;
+}
+
+#price-tracker-panel #price-tracker-notify-me input {
+    width:60px;
+    display:inline;
+}
+
+#price-tracker-panel #price-tracker-image-numbers,
+#price-tracker-panel #price-tracker-currently-selected-price {
+    display:inline-block;
+    width:60px;
+    text-align:center;
+}
+
+#price-tracker-panel #price-tracker-actions {
+    text-align:right;
+    clear:both;
+    padding:10px 0 10px;
+}
+
+#price-tracker-panel #price-tracker-actions button {
+  border-style: solid;
+  border-width: 0px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2rem;
+  font-size: 1rem;
+  background-color: #1e5953;
+  border-color: #184742;
+  color: white;
+  transition: background-color 300ms ease-out;
+}
+#price-tracker-panel #price-tracker-actions button:hover,
+#price-tracker-panel #price-tracker-actions button:focus {
+    background-color: #184742;
+}
+
+#price-tracker-panel #price-tracker-actions button[disabled="disabled"] {
+    opacity:0.7;
+}
+
+#price-tracker-panel #price-tracker-actions * {
+    vertical-align: middle;
+}
+
+#price-tracker-panel #price-tracker-actions img {
+	margin-right:10px;
+}
+
+#price-tracker-panel #price-tracker-actions p {
+    text-align: left;
+}
+
+#price-tracker-panel #price-tracker-help {
+    font-size:11px;
+}
+
+#price-tracker-panel .error {
+    color:red;
+    padding:8px;
+}
+
+#price-tracker-panel .success {
+    color:green;
+    padding:8px;
+}
