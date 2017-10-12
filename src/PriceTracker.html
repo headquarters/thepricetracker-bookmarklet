@@ -1,5 +1,5 @@
 <div id="price-tracker-panel">
-  <button id="price-tracker-close" type="button">Close</button>
+  <button id="price-tracker-close" type="button" aria-label="Close" on:click="destroy()">&times;</button>
   <div id="price-tracker-title">Add to The Price Tracker</div>
   <div id="price-tracker-image-block">
     <div id="price-tracker-image-container">
@@ -23,20 +23,240 @@
     </div> 
     <div id="price-tracker-price-block" class="price-tracker-row">
         <div class="label">Current Price</div>
-        <div id="price-tracker-currently-selected-price"></div>
+        <div id="price-tracker-currently-selected-price">{{price}}</div>
     </div>
     <div id="price-tracker-notify-me"  class="price-tracker-row">
       <label for="price-tracker-target-price" class="label">Target Price</label>
       <div id="price-tracker-price-help">You are notified when price drops to or below this target</div>
-      $<input id="price-tracker-target-price" type="text" value="" name="target" /> 
+      $<input id="price-tracker-target-price" type="text" value={{discountedPrice}} name="target" /> 
     </div> 
   </div> 
   <div id="price-tracker-actions" class="price-tracker-row">
     <button type="button">Track this price</button>
   </div> 
 </div>
+
+<div id="price-tracker-overlay" ref:overlay>&nbsp;</div>
+
 <script>
   export default {
-    // behaviours go here
+    oncreate() {
+    
+    },
+
+    ondestroy() {
+     this.get('priceNode').style = this.get('originalStyle');
+    }
   };
 </script>
+
+<style>
+  #price-tracker-panel * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  #price-tracker-overlay {
+    content: " ";
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.4;
+    z-index: 10000;
+  }
+
+  #price-tracker-panel {
+    border: 1px solid #666;
+    background-color: #fff;
+    font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #222;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+    -webkit-text-size-adjust: 100%;
+    width: 320px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    z-index: 999999;
+    padding: 10px;
+    box-shadow: 0 2px 10px 2px #999;
+  }
+
+  #price-tracker-panel #price-tracker-loading {
+      width: 340px;
+      height: 100%;
+      background: #fff;
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+  }
+
+  #price-tracker-panel #price-tracker-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #price-tracker-panel #price-tracker-close {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      background: lightpink;
+      border: none;
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+      color: #000;
+      padding: 3px 10px;
+
+  }
+
+  #price-tracker-panel #price-tracker-close:hover {
+      background-color: darkred;
+      color: white;
+  }
+
+  #price-tracker-panel label,
+  #price-tracker-panel .label {
+      font-weight: bold;
+      color: #222;
+      background: none;
+      text-align: left;
+  }
+
+  #price-tracker-panel #price-tracker-name-block input {
+      width: 100%;
+      border: 1px solid gray;
+  }
+
+  #price-tracker-panel #price-tracker-name-block textarea {
+      width: 100%;
+      height: 60px;
+      resize: none;
+      border: 1px solid gray;
+  }
+
+  #price-tracker-panel #price-tracker-name-block label {
+    display: block;
+  }
+
+  #price-tracker-panel #price-tracker-price-help {
+    font-size: 12px;
+  }
+
+  #price-tracker-panel .price-tracker-row {
+      margin-top: 10px;
+  }
+
+  #price-tracker-panel .price-tracker-direction {
+      display: inline-block;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      /* background: transparent url(https: //thepricetracker.com/images/arrows.png) no-repeat left center;*/
+      text-indent: -999em;
+  }
+
+  #price-tracker-panel .price-tracker-direction.right-direction {
+      background-position: right center;
+  }
+
+  #price-tracker-panel #price-tracker-image-block {
+      margin-top: 15px;
+      text-align: center;
+  }
+
+  #price-tracker-panel #price-tracker-image-container {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+  }
+
+  #price-tracker-panel #price-tracker-price-block {
+      width: auto;
+      clear: both;
+  }
+
+  #price-tracker-panel #price-tracker-notify-me input {
+      width: 60px;
+      display: inline;
+  }
+
+  #price-tracker-panel #price-tracker-image-numbers,
+  #price-tracker-panel #price-tracker-currently-selected-price {
+      display: inline-block;
+      width: 60px;
+      text-align: center;
+  }
+
+  #price-tracker-panel #price-tracker-actions {
+      text-align: right;
+      clear: both;
+      padding: 10px 0 10px;
+  }
+
+  #price-tracker-panel #price-tracker-actions button {
+    border-style: solid;
+    border-width: 0px;
+    cursor: pointer;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 0 1.25rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    display: inline-block;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1.0625rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    background-color: forestgreen;
+    color: white;
+    transition: background-color 300ms ease-out;
+  }
+  #price-tracker-panel #price-tracker-actions button:hover,
+  #price-tracker-panel #price-tracker-actions button:focus {
+      background-color: darkgreen;
+  }
+
+  #price-tracker-panel #price-tracker-actions button[disabled="disabled"] {
+      opacity: 0.7;
+  }
+
+  #price-tracker-panel #price-tracker-actions * {
+      vertical-align: middle;
+  }
+
+  #price-tracker-panel #price-tracker-actions img {
+    margin-right: 10px;
+  }
+
+  #price-tracker-panel #price-tracker-actions p {
+      text-align: left;
+  }
+
+  #price-tracker-panel #price-tracker-help {
+      font-size: 11px;
+  }
+
+  #price-tracker-panel .error {
+      color: red;
+      padding: 8px;
+  }
+
+  #price-tracker-panel .success {
+      color: green;
+      padding: 8px;
+  }
+</style>
