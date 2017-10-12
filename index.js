@@ -20,13 +20,15 @@ app.get('/', function (req, res) {
         it's an immediately-invoked function expression (IIFE). You can also click <a href="${bookmarklet}">Open Bookmarklet</a> 
         to invoke the bookmarklet if you close it. 
       </p>
-      <div>A sample price: <span class="price">$99.99</span></div>
+      <div>
+        A sample price: <span class="price" style="text-decoration: line-through">$100.00</span> <span class="price">$99.99</span> 
+      </div>
       <script src="PriceTracker.js"></script>
     </body>  
     </html>
   `);
-})
+});
 
 app.listen(3000, function () {
   console.log('Sample page available at localhost:3000')
-})
+});

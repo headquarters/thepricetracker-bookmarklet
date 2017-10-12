@@ -206,22 +206,98 @@ function oncreate() {
 }
 
 function ondestroy() {
- this.get('priceNode').style = this.get('originalStyle');
+  var priceNode = this.get('priceNode');
+  if (priceNode) {
+    priceNode.style = this.get('originalStyle');
+  }     
 }
 
 function encapsulateStyles(node) {
-	setAttribute(node, "svelte-401921442", "");
+	setAttribute(node, "svelte-2498750967", "");
 }
 
 function add_css() {
 	var style = createElement("style");
-	style.id = 'svelte-401921442-style';
-	style.textContent = "[svelte-401921442]#price-tracker-panel *,[svelte-401921442] #price-tracker-panel *{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0;font-size:16px}[svelte-401921442]#price-tracker-overlay,[svelte-401921442] #price-tracker-overlay{content:\" \";display:block;width:100vw;height:100vh;background:black;position:absolute;left:0;top:0;opacity:0.4;z-index:10000}[svelte-401921442]#price-tracker-panel,[svelte-401921442] #price-tracker-panel{border:1px solid #666;background-color:#fff;font:14px/21px \"HelveticaNeue\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;color:#222;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;width:320px;position:absolute;right:40px;top:40px;z-index:999999;padding:10px;box-shadow:0 2px 10px 2px #999}[svelte-401921442]#price-tracker-panel #price-tracker-loading,[svelte-401921442] #price-tracker-panel #price-tracker-loading{width:340px;height:100%;background:#fff;position:absolute;left:0;top:0;text-align:center}[svelte-401921442]#price-tracker-panel #price-tracker-title,[svelte-401921442] #price-tracker-panel #price-tracker-title{font-size:18px;text-align:center}[svelte-401921442]#price-tracker-panel #price-tracker-close,[svelte-401921442] #price-tracker-panel #price-tracker-close{position:absolute;top:0px;right:0;background:lightpink;border:none;font-size:18px;line-height:1;cursor:pointer;color:#000;padding:3px 10px}[svelte-401921442]#price-tracker-panel #price-tracker-close:hover,[svelte-401921442] #price-tracker-panel #price-tracker-close:hover{background-color:darkred;color:white}[svelte-401921442]#price-tracker-panel label,[svelte-401921442] #price-tracker-panel label,[svelte-401921442]#price-tracker-panel .label,[svelte-401921442] #price-tracker-panel .label{font-weight:bold;color:#222;background:none;text-align:left}[svelte-401921442]#price-tracker-panel #price-tracker-name-block input,[svelte-401921442] #price-tracker-panel #price-tracker-name-block input{width:100%;border:1px solid gray}[svelte-401921442]#price-tracker-panel #price-tracker-name-block textarea,[svelte-401921442] #price-tracker-panel #price-tracker-name-block textarea{width:100%;height:60px;resize:none;border:1px solid gray}[svelte-401921442]#price-tracker-panel #price-tracker-name-block label,[svelte-401921442] #price-tracker-panel #price-tracker-name-block label{display:block}[svelte-401921442]#price-tracker-panel #price-tracker-price-help,[svelte-401921442] #price-tracker-panel #price-tracker-price-help{font-size:12px}[svelte-401921442]#price-tracker-panel .price-tracker-row,[svelte-401921442] #price-tracker-panel .price-tracker-row{margin-top:10px}[svelte-401921442]#price-tracker-panel .price-tracker-direction,[svelte-401921442] #price-tracker-panel .price-tracker-direction{display:inline-block;font-size:16px;margin:5px;cursor:pointer;text-indent:-999em}[svelte-401921442]#price-tracker-panel .price-tracker-direction.right-direction,[svelte-401921442] #price-tracker-panel .price-tracker-direction.right-direction{background-position:right center}[svelte-401921442]#price-tracker-panel #price-tracker-image-block,[svelte-401921442] #price-tracker-panel #price-tracker-image-block{margin-top:15px;text-align:center}[svelte-401921442]#price-tracker-panel #price-tracker-image-container,[svelte-401921442] #price-tracker-panel #price-tracker-image-container{width:100px;height:100px;overflow:hidden}[svelte-401921442]#price-tracker-panel #price-tracker-price-block,[svelte-401921442] #price-tracker-panel #price-tracker-price-block{width:auto;clear:both}[svelte-401921442]#price-tracker-panel #price-tracker-notify-me input,[svelte-401921442] #price-tracker-panel #price-tracker-notify-me input{width:60px;display:inline}[svelte-401921442]#price-tracker-panel #price-tracker-image-numbers,[svelte-401921442] #price-tracker-panel #price-tracker-image-numbers,[svelte-401921442]#price-tracker-panel #price-tracker-currently-selected-price,[svelte-401921442] #price-tracker-panel #price-tracker-currently-selected-price{display:inline-block;width:60px;text-align:center}[svelte-401921442]#price-tracker-panel #price-tracker-actions,[svelte-401921442] #price-tracker-panel #price-tracker-actions{text-align:right;clear:both;padding:10px 0 10px}[svelte-401921442]#price-tracker-panel #price-tracker-actions button,[svelte-401921442] #price-tracker-panel #price-tracker-actions button{border-style:solid;border-width:0px;cursor:pointer;font-family:\"Helvetica Neue\", \"Helvetica\", Helvetica, Arial, sans-serif;font-weight:normal;line-height:normal;margin:0 0 1.25rem;position:relative;text-decoration:none;text-align:center;-webkit-appearance:none;-webkit-border-radius:0;display:inline-block;padding-top:1rem;padding-right:2rem;padding-bottom:1.0625rem;padding-left:2rem;font-size:1rem;background-color:forestgreen;color:white;transition:background-color 300ms ease-out}[svelte-401921442]#price-tracker-panel #price-tracker-actions button:hover,[svelte-401921442] #price-tracker-panel #price-tracker-actions button:hover,[svelte-401921442]#price-tracker-panel #price-tracker-actions button:focus,[svelte-401921442] #price-tracker-panel #price-tracker-actions button:focus{background-color:darkgreen}[svelte-401921442]#price-tracker-panel #price-tracker-actions button[disabled=\"disabled\"],[svelte-401921442] #price-tracker-panel #price-tracker-actions button[disabled=\"disabled\"]{opacity:0.7}[svelte-401921442]#price-tracker-panel #price-tracker-actions *,[svelte-401921442] #price-tracker-panel #price-tracker-actions *{vertical-align:middle}[svelte-401921442]#price-tracker-panel #price-tracker-actions img,[svelte-401921442] #price-tracker-panel #price-tracker-actions img{margin-right:10px}[svelte-401921442]#price-tracker-panel #price-tracker-actions p,[svelte-401921442] #price-tracker-panel #price-tracker-actions p{text-align:left}[svelte-401921442]#price-tracker-panel #price-tracker-help,[svelte-401921442] #price-tracker-panel #price-tracker-help{font-size:11px}[svelte-401921442]#price-tracker-panel .error,[svelte-401921442] #price-tracker-panel .error{color:red;padding:8px}[svelte-401921442]#price-tracker-panel .success,[svelte-401921442] #price-tracker-panel .success{color:green;padding:8px}";
+	style.id = 'svelte-2498750967-style';
+	style.textContent = "[svelte-2498750967]#price-tracker-panel *,[svelte-2498750967] #price-tracker-panel *{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0;font-size:16px}[svelte-2498750967]#price-tracker-overlay,[svelte-2498750967] #price-tracker-overlay{content:\" \";display:block;width:100vw;height:100vh;background:black;position:absolute;left:0;top:0;opacity:0.4;z-index:10000}[svelte-2498750967]#price-tracker-panel,[svelte-2498750967] #price-tracker-panel{border:1px solid #666;background-color:#fff;font:14px/21px \"HelveticaNeue\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;color:#222;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%;width:320px;position:absolute;right:40px;top:40px;z-index:999999;padding:10px;box-shadow:0 2px 10px 2px #999}[svelte-2498750967]#price-tracker-panel #price-tracker-loading,[svelte-2498750967] #price-tracker-panel #price-tracker-loading{width:340px;height:100%;background:#fff;position:absolute;left:0;top:0;text-align:center}[svelte-2498750967]#price-tracker-panel #price-tracker-title,[svelte-2498750967] #price-tracker-panel #price-tracker-title{font-size:18px;text-align:center}[svelte-2498750967]#price-tracker-panel #price-tracker-close,[svelte-2498750967] #price-tracker-panel #price-tracker-close{position:absolute;top:0px;right:0;background:lightpink;border:none;font-size:18px;line-height:1;cursor:pointer;color:#000;padding:3px 10px}[svelte-2498750967]#price-tracker-panel #price-tracker-close:hover,[svelte-2498750967] #price-tracker-panel #price-tracker-close:hover{background-color:darkred;color:white}[svelte-2498750967]#price-tracker-panel label,[svelte-2498750967] #price-tracker-panel label,[svelte-2498750967]#price-tracker-panel .label,[svelte-2498750967] #price-tracker-panel .label{font-weight:bold;color:#222;background:none;text-align:left}[svelte-2498750967]#price-tracker-panel #price-tracker-name-block input,[svelte-2498750967] #price-tracker-panel #price-tracker-name-block input{width:100%;border:1px solid gray}[svelte-2498750967]#price-tracker-panel #price-tracker-name-block textarea,[svelte-2498750967] #price-tracker-panel #price-tracker-name-block textarea{width:100%;height:60px;resize:none;border:1px solid gray}[svelte-2498750967]#price-tracker-panel #price-tracker-name-block label,[svelte-2498750967] #price-tracker-panel #price-tracker-name-block label{display:block}[svelte-2498750967]#price-tracker-panel #price-tracker-price-help,[svelte-2498750967] #price-tracker-panel #price-tracker-price-help{font-size:12px}[svelte-2498750967]#price-tracker-panel .price-tracker-row,[svelte-2498750967] #price-tracker-panel .price-tracker-row{margin-top:10px}[svelte-2498750967]#price-tracker-panel .price-tracker-direction,[svelte-2498750967] #price-tracker-panel .price-tracker-direction{display:inline-block;font-size:16px;margin:5px;cursor:pointer;text-indent:-999em}[svelte-2498750967]#price-tracker-panel .price-tracker-direction.right-direction,[svelte-2498750967] #price-tracker-panel .price-tracker-direction.right-direction{background-position:right center}[svelte-2498750967]#price-tracker-panel #price-tracker-image-block,[svelte-2498750967] #price-tracker-panel #price-tracker-image-block{margin-top:15px;text-align:center}[svelte-2498750967]#price-tracker-panel #price-tracker-image-container,[svelte-2498750967] #price-tracker-panel #price-tracker-image-container{width:100px;height:100px;overflow:hidden}[svelte-2498750967]#price-tracker-panel #price-tracker-price-block,[svelte-2498750967] #price-tracker-panel #price-tracker-price-block{width:auto;clear:both}[svelte-2498750967]#price-tracker-panel #price-tracker-notify-me input,[svelte-2498750967] #price-tracker-panel #price-tracker-notify-me input{width:60px;display:inline}[svelte-2498750967]#price-tracker-panel #price-tracker-image-numbers,[svelte-2498750967] #price-tracker-panel #price-tracker-image-numbers,[svelte-2498750967]#price-tracker-panel #price-tracker-currently-selected-price,[svelte-2498750967] #price-tracker-panel #price-tracker-currently-selected-price{display:inline-block;width:60px;text-align:center}[svelte-2498750967]#price-tracker-panel #price-tracker-actions,[svelte-2498750967] #price-tracker-panel #price-tracker-actions{text-align:right;clear:both;padding:10px 0 10px}[svelte-2498750967]#price-tracker-panel #price-tracker-actions button,[svelte-2498750967] #price-tracker-panel #price-tracker-actions button{border-style:solid;border-width:0px;cursor:pointer;font-family:\"Helvetica Neue\", \"Helvetica\", Helvetica, Arial, sans-serif;font-weight:normal;line-height:normal;margin:0 0 1.25rem;position:relative;text-decoration:none;text-align:center;-webkit-appearance:none;-webkit-border-radius:0;display:inline-block;padding-top:1rem;padding-right:2rem;padding-bottom:1.0625rem;padding-left:2rem;font-size:1rem;background-color:forestgreen;color:white;transition:background-color 300ms ease-out}[svelte-2498750967]#price-tracker-panel #price-tracker-actions button:hover,[svelte-2498750967] #price-tracker-panel #price-tracker-actions button:hover,[svelte-2498750967]#price-tracker-panel #price-tracker-actions button:focus,[svelte-2498750967] #price-tracker-panel #price-tracker-actions button:focus{background-color:darkgreen}[svelte-2498750967]#price-tracker-panel #price-tracker-actions button[disabled=\"disabled\"],[svelte-2498750967] #price-tracker-panel #price-tracker-actions button[disabled=\"disabled\"]{opacity:0.7}[svelte-2498750967]#price-tracker-panel #price-tracker-actions *,[svelte-2498750967] #price-tracker-panel #price-tracker-actions *{vertical-align:middle}[svelte-2498750967]#price-tracker-panel #price-tracker-actions img,[svelte-2498750967] #price-tracker-panel #price-tracker-actions img{margin-right:10px}[svelte-2498750967]#price-tracker-panel #price-tracker-actions p,[svelte-2498750967] #price-tracker-panel #price-tracker-actions p{text-align:left}[svelte-2498750967]#price-tracker-panel #price-tracker-help,[svelte-2498750967] #price-tracker-panel #price-tracker-help{font-size:11px}[svelte-2498750967]#price-tracker-panel .error,[svelte-2498750967] #price-tracker-panel .error{color:red;padding:8px}[svelte-2498750967]#price-tracker-panel .success,[svelte-2498750967] #price-tracker-panel .success{color:green;padding:8px}";
 	appendNode(style, document.head);
 }
 
 function create_main_fragment(state, component) {
-	var div, button, text_1, div_1, text_3, div_2, text_15, div_7, div_8, label, text_17, input, text_19, div_9, text_23, div_10, div_11, text_25, div_12, text_26, text_28, div_13, label_2, text_30, div_14, text_32, input_1, text_35, div_15, text_39, div_16;
+	var div, text_1, div_1, text_2, text_3, text_4, div_2;
+
+	var current_block_type = select_block_type(state);
+	var if_block = current_block_type(state, component);
+
+	return {
+		c: function create() {
+			div = createElement("div");
+			if_block.c();
+			text_1 = createText("\n\n");
+			div_1 = createElement("div");
+			text_2 = createText("CSS selector: ");
+			text_3 = createText(state.cssSelector);
+			text_4 = createText("\n\n");
+			div_2 = createElement("div");
+			div_2.textContent = " ";
+			this.h();
+		},
+
+		h: function hydrate() {
+			encapsulateStyles(div);
+			div.id = "price-tracker-panel";
+			encapsulateStyles(div_1);
+			encapsulateStyles(div_2);
+			div_2.id = "price-tracker-overlay";
+		},
+
+		m: function mount(target, anchor) {
+			insertNode(div, target, anchor);
+			if_block.m(div, null);
+			insertNode(text_1, target, anchor);
+			insertNode(div_1, target, anchor);
+			appendNode(text_2, div_1);
+			appendNode(text_3, div_1);
+			insertNode(text_4, target, anchor);
+			insertNode(div_2, target, anchor);
+			component.refs.overlay = div_2;
+		},
+
+		p: function update(changed, state) {
+			if (current_block_type === (current_block_type = select_block_type(state)) && if_block) {
+				if_block.p(changed, state);
+			} else {
+				if_block.u();
+				if_block.d();
+				if_block = current_block_type(state, component);
+				if_block.c();
+				if_block.m(div, null);
+			}
+
+			if (changed.cssSelector) {
+				text_3.data = state.cssSelector;
+			}
+		},
+
+		u: function unmount() {
+			detachNode(div);
+			if_block.u();
+			detachNode(text_1);
+			detachNode(div_1);
+			detachNode(text_4);
+			detachNode(div_2);
+		},
+
+		d: function destroy$$1() {
+			if_block.d();
+			if (component.refs.overlay === div_2) component.refs.overlay = null;
+		}
+	};
+}
+
+// (2:2) {{#if price}}
+function create_if_block(state, component) {
+	var button, text_1, div, text_3, div_1, text_15, div_6, div_7, label, text_17, input, text_19, div_8, text_23, div_9, div_10, text_25, div_11, text_26, text_28, div_12, label_2, text_30, div_13, text_32, input_1, text_35, div_14;
 
 	function click_handler(event) {
 		component.destroy();
@@ -229,119 +305,107 @@ function create_main_fragment(state, component) {
 
 	return {
 		c: function create() {
-			div = createElement("div");
 			button = createElement("button");
 			button.textContent = "×";
-			text_1 = createText("\n  ");
+			text_1 = createText("\n    ");
+			div = createElement("div");
+			div.textContent = "Add to The Price Tracker";
+			text_3 = createText("\n    ");
 			div_1 = createElement("div");
-			div_1.textContent = "Add to The Price Tracker";
-			text_3 = createText("\n  ");
-			div_2 = createElement("div");
-			div_2.innerHTML = "<div id=\"price-tracker-image-container\"><img src=\"\" alt=\"No Image\" height=\"100\"></div>\n    <div id=\"price-tracker-previous-image\" class=\"price-tracker-direction left-direction\"><</div>\n    <div id=\"price-tracker-image-numbers\"><span id=\"price-tracker-current-image\">1</span> of\n      <span id=\"price-tracker-image-total\">1</span></div>\n    <div id=\"price-tracker-next-image\" class=\"price-tracker-direction right-direction\">></div>";
-			text_15 = createText("\n  ");
+			div_1.innerHTML = "<div id=\"price-tracker-image-container\"><img src=\"\" alt=\"No Image\" height=\"100\"></div>\n      <div id=\"price-tracker-previous-image\" class=\"price-tracker-direction left-direction\"><</div>\n      <div id=\"price-tracker-image-numbers\"><span id=\"price-tracker-current-image\">1</span> of\n        <span id=\"price-tracker-image-total\">1</span></div>\n      <div id=\"price-tracker-next-image\" class=\"price-tracker-direction right-direction\">></div>";
+			text_15 = createText("\n    ");
+			div_6 = createElement("div");
 			div_7 = createElement("div");
-			div_8 = createElement("div");
 			label = createElement("label");
 			label.textContent = "Name";
-			text_17 = createText("\n      ");
+			text_17 = createText("\n        ");
 			input = createElement("input");
-			text_19 = createText("\n    ");
+			text_19 = createText("\n      ");
+			div_8 = createElement("div");
+			div_8.innerHTML = "<label for=\"note\">Note</label>\n        <textarea name=\"note\"></textarea>";
+			text_23 = createText(" \n      ");
 			div_9 = createElement("div");
-			div_9.innerHTML = "<label for=\"note\">Note</label>\n      <textarea name=\"note\"></textarea>";
-			text_23 = createText(" \n    ");
 			div_10 = createElement("div");
+			div_10.textContent = "Current Price";
+			text_25 = createText("\n          ");
 			div_11 = createElement("div");
-			div_11.textContent = "Current Price";
-			text_25 = createText("\n        ");
-			div_12 = createElement("div");
 			text_26 = createText(state.price);
-			text_28 = createText("\n    ");
-			div_13 = createElement("div");
+			text_28 = createText("\n      ");
+			div_12 = createElement("div");
 			label_2 = createElement("label");
 			label_2.textContent = "Target Price";
-			text_30 = createText("\n      ");
-			div_14 = createElement("div");
-			div_14.textContent = "You are notified when price drops to or below this target";
-			text_32 = createText("\n      $");
+			text_30 = createText("\n        ");
+			div_13 = createElement("div");
+			div_13.textContent = "You are notified when price drops to or below this target";
+			text_32 = createText("\n        $");
 			input_1 = createElement("input");
-			text_35 = createText(" \n  ");
-			div_15 = createElement("div");
-			div_15.innerHTML = "<button type=\"button\">Track this price</button>";
-			text_39 = createText("\n\n");
-			div_16 = createElement("div");
-			div_16.textContent = " ";
+			text_35 = createText(" \n  \n    ");
+			div_14 = createElement("div");
+			div_14.innerHTML = "<button type=\"button\">Track this price</button>";
 			this.h();
 		},
 
 		h: function hydrate() {
-			encapsulateStyles(div);
-			div.id = "price-tracker-panel";
 			button.id = "price-tracker-close";
 			button.type = "button";
 			setAttribute(button, "aria-label", "Close");
 			addListener(button, "click", click_handler);
-			div_1.id = "price-tracker-title";
-			div_2.id = "price-tracker-image-block";
-			div_7.id = "price-tracker-name-block";
-			div_8.className = "price-tracker-row";
+			div.id = "price-tracker-title";
+			div_1.id = "price-tracker-image-block";
+			div_6.id = "price-tracker-name-block";
+			div_7.className = "price-tracker-row";
 			label.htmlFor = "price-tracker-product-name";
 			input.id = "price-tracker-product-name";
 			input.type = "text";
 			input.value = state.title;
 			input.name = "name";
+			div_8.className = "price-tracker-row";
+			div_9.id = "price-tracker-price-block";
 			div_9.className = "price-tracker-row";
-			div_10.id = "price-tracker-price-block";
-			div_10.className = "price-tracker-row";
-			div_11.className = "label";
-			div_12.id = "price-tracker-currently-selected-price";
-			div_13.id = "price-tracker-notify-me";
-			div_13.className = "price-tracker-row";
+			div_10.className = "label";
+			div_11.id = "price-tracker-currently-selected-price";
+			div_12.id = "price-tracker-notify-me";
+			div_12.className = "price-tracker-row";
 			label_2.htmlFor = "price-tracker-target-price";
 			label_2.className = "label";
-			div_14.id = "price-tracker-price-help";
+			div_13.id = "price-tracker-price-help";
 			input_1.id = "price-tracker-target-price";
 			input_1.type = "text";
 			input_1.value = state.discountedPrice;
 			input_1.name = "target";
-			div_15.id = "price-tracker-actions";
-			div_15.className = "price-tracker-row";
-			encapsulateStyles(div_16);
-			div_16.id = "price-tracker-overlay";
+			div_14.id = "price-tracker-actions";
+			div_14.className = "price-tracker-row";
 		},
 
 		m: function mount(target, anchor) {
+			insertNode(button, target, anchor);
+			insertNode(text_1, target, anchor);
 			insertNode(div, target, anchor);
-			appendNode(button, div);
-			appendNode(text_1, div);
-			appendNode(div_1, div);
-			appendNode(text_3, div);
-			appendNode(div_2, div);
-			appendNode(text_15, div);
-			appendNode(div_7, div);
-			appendNode(div_8, div_7);
-			appendNode(label, div_8);
-			appendNode(text_17, div_8);
-			appendNode(input, div_8);
-			appendNode(text_19, div_7);
-			appendNode(div_9, div_7);
-			appendNode(text_23, div_7);
-			appendNode(div_10, div_7);
-			appendNode(div_11, div_10);
-			appendNode(text_25, div_10);
-			appendNode(div_12, div_10);
-			appendNode(text_26, div_12);
-			appendNode(text_28, div_7);
-			appendNode(div_13, div_7);
-			appendNode(label_2, div_13);
-			appendNode(text_30, div_13);
-			appendNode(div_14, div_13);
-			appendNode(text_32, div_13);
-			appendNode(input_1, div_13);
-			appendNode(text_35, div);
-			appendNode(div_15, div);
-			insertNode(text_39, target, anchor);
-			insertNode(div_16, target, anchor);
-			component.refs.overlay = div_16;
+			insertNode(text_3, target, anchor);
+			insertNode(div_1, target, anchor);
+			insertNode(text_15, target, anchor);
+			insertNode(div_6, target, anchor);
+			appendNode(div_7, div_6);
+			appendNode(label, div_7);
+			appendNode(text_17, div_7);
+			appendNode(input, div_7);
+			appendNode(text_19, div_6);
+			appendNode(div_8, div_6);
+			appendNode(text_23, div_6);
+			appendNode(div_9, div_6);
+			appendNode(div_10, div_9);
+			appendNode(text_25, div_9);
+			appendNode(div_11, div_9);
+			appendNode(text_26, div_11);
+			appendNode(text_28, div_6);
+			appendNode(div_12, div_6);
+			appendNode(label_2, div_12);
+			appendNode(text_30, div_12);
+			appendNode(div_13, div_12);
+			appendNode(text_32, div_12);
+			appendNode(input_1, div_12);
+			insertNode(text_35, target, anchor);
+			insertNode(div_14, target, anchor);
 		},
 
 		p: function update(changed, state) {
@@ -359,16 +423,84 @@ function create_main_fragment(state, component) {
 		},
 
 		u: function unmount() {
+			detachNode(button);
+			detachNode(text_1);
 			detachNode(div);
-			detachNode(text_39);
-			detachNode(div_16);
+			detachNode(text_3);
+			detachNode(div_1);
+			detachNode(text_15);
+			detachNode(div_6);
+			detachNode(text_35);
+			detachNode(div_14);
 		},
 
 		d: function destroy$$1() {
 			removeListener(button, "click", click_handler);
-			if (component.refs.overlay === div_16) component.refs.overlay = null;
 		}
 	};
+}
+
+// (39:2) {{else}}
+function create_if_block_1(state, component) {
+	var p, text, a, a_href_value, text_2, text_3, div, button;
+
+	function click_handler(event) {
+		component.destroy();
+	}
+
+	return {
+		c: function create() {
+			p = createElement("p");
+			text = createText("The Price Tracker could not find any prices on this page. \n      If there are some and it missed them, feel free to report a problem \n      by emailing ");
+			a = createElement("a");
+			a.textContent = "issues@thepricetracker.com";
+			text_2 = createText(".");
+			text_3 = createText("\n    ");
+			div = createElement("div");
+			button = createElement("button");
+			button.textContent = "Close";
+			this.h();
+		},
+
+		h: function hydrate() {
+			a.href = a_href_value = "mailto:issues@thepricetracker.com?subject=Problem finding prices on " + state.url;
+			div.id = "price-tracker-actions";
+			div.className = "price-tracker-row";
+			button.type = "button";
+			addListener(button, "click", click_handler);
+		},
+
+		m: function mount(target, anchor) {
+			insertNode(p, target, anchor);
+			appendNode(text, p);
+			appendNode(a, p);
+			appendNode(text_2, p);
+			insertNode(text_3, target, anchor);
+			insertNode(div, target, anchor);
+			appendNode(button, div);
+		},
+
+		p: function update(changed, state) {
+			if ((changed.url) && a_href_value !== (a_href_value = "mailto:issues@thepricetracker.com?subject=Problem finding prices on " + state.url)) {
+				a.href = a_href_value;
+			}
+		},
+
+		u: function unmount() {
+			detachNode(p);
+			detachNode(text_3);
+			detachNode(div);
+		},
+
+		d: function destroy$$1() {
+			removeListener(button, "click", click_handler);
+		}
+	};
+}
+
+function select_block_type(state) {
+	if (state.price) return create_if_block;
+	return create_if_block_1;
 }
 
 function PriceTracker(options) {
@@ -378,7 +510,7 @@ function PriceTracker(options) {
 
 	this._handlers.destroy = [ondestroy];
 
-	if (!document.getElementById("svelte-401921442-style")) add_css();
+	if (!document.getElementById("svelte-2498750967-style")) add_css();
 
 	var _oncreate = oncreate.bind(this);
 
@@ -426,7 +558,7 @@ function getTextNodesWithPriceSymbol(node) {
               var $element = node.parentNode;
               
               var priceText = $element.innerText;
-
+console.log('priceText', priceText, priceFormatRegex.exec(priceText));
               // Verify text in the node with the dollar sign contains a valid price            
               if (priceFormatRegex.test(priceText)) {
                   var priceNode = {};                  
@@ -493,20 +625,22 @@ var discountedPrice = 0;
 var targetPriceNode = null;
 var originalStyle = {};
 
-      if (priceNodeCollection.length > 0){
-        targetPriceNode = priceNodeCollection[0].$element;
-        originalStyle = target.style;
-        targetPriceNode.style.backgroundColor = '#ffff9b';    
-        targetPriceNode.style.zIndex = 20000;
-        targetPriceNode.style.position = 'relative';
+console.log('prices found: ', priceNodeCollection);
 
-    
-        price = priceNodeCollection[0].price;
-      
-        var priceFloat = parseFloat(priceNodeCollection[0].price.replace('$', ''));
-        
-        discountedPrice = Math.floor(priceFloat - Math.ceil(priceFloat * 0.10));
-    } 
+if (priceNodeCollection.length > 0){
+  targetPriceNode = priceNodeCollection[0].$element;
+  originalStyle = target.style;
+  targetPriceNode.style.backgroundColor = '#ffff9b';    
+  targetPriceNode.style.zIndex = 20000;
+  targetPriceNode.style.position = 'relative';
+
+
+  price = priceNodeCollection[0].price;
+
+  var priceFloat = parseFloat(priceNodeCollection[0].price.replace('$', ''));
+  
+  discountedPrice = Math.floor(priceFloat - Math.ceil(priceFloat * 0.10));
+} 
 // move into component to display different message when price is not found on page
     // else {
     //     var $button = $panel.find('#price-tracker-actions button');
@@ -516,6 +650,73 @@ var originalStyle = {};
 
 console.log(priceNodeCollection);
 
+function getPath(_node) {
+  if (!_node) {
+    throw 'Requires one node';
+  }
+
+  var path; 
+  var node = _node;
+
+  while (node) {
+    
+      var name = node.localName;
+
+      if (!name) {
+        break;
+      }
+
+      name = name.toLowerCase();
+
+      if (node.id) {
+          // As soon as an id is found, there's no need to specify more.
+          return name + '#' + node.id + (path ? '>' + path : '');
+      } else if (node.className) {
+          name += '.' + node.className.split(/\s+/).join('.');
+      }
+    
+      // This should stop at the body because parentElement is null for document.body.documentElement, 
+      // whereas parentNode would return an element
+      var parent = node.parentElement;
+      
+      if (!parent) {
+        return path;
+      }
+    
+      var siblingsIndex = 0;
+
+      console.log(parent.children);
+      for (var i = 0; i < parent.children.length; ++i) {
+        var item = parent.children[i]; 
+
+        // Selectors match, need to disambiguate based on nth-child index
+        if (item.localName.toLowerCase() + "." + item.className.split(/\s+/).join('.') === name) {
+          siblingsIndex++;
+        }
+        // We hit the target node, we know its index now
+        if (item === node) {
+          break;
+        }
+      }
+
+      if (siblingsIndex > 1) {
+        name += ':nth-child(' + (siblingsIndex + 1) + ')';
+      } 
+
+      path = name + (path ? '>' + path : '');
+
+      node = parent;
+  }
+
+  return path;
+}
+
+var cssSelector = null;
+
+if (targetPriceNode) {
+  cssSelector = getPath(targetPriceNode);
+}
+
 var _PriceTracker = new PriceTracker({
   target: target,
   data: {
@@ -523,7 +724,9 @@ var _PriceTracker = new PriceTracker({
     price: price,
     discountedPrice: discountedPrice,
     priceNode: targetPriceNode,
-    originalStyle: originalStyle
+    originalStyle: originalStyle,
+    url: encodeURIComponent(window.location.href),
+    cssSelector: cssSelector
   }
 });
 

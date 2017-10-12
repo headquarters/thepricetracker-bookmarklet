@@ -1,40 +1,54 @@
 <div id="price-tracker-panel">
-  <button id="price-tracker-close" type="button" aria-label="Close" on:click="destroy()">&times;</button>
-  <div id="price-tracker-title">Add to The Price Tracker</div>
-  <div id="price-tracker-image-block">
-    <div id="price-tracker-image-container">
-      <img src="" alt="No Image" height="100" />
+  {{#if price}}
+    <button id="price-tracker-close" type="button" aria-label="Close" on:click="destroy()">&times;</button>
+    <div id="price-tracker-title">Add to The Price Tracker</div>
+    <div id="price-tracker-image-block">
+      <div id="price-tracker-image-container">
+        <img src="" alt="No Image" height="100" />
+      </div>
+      <div id="price-tracker-previous-image" class="price-tracker-direction left-direction"> &lt; </div>
+      <div id="price-tracker-image-numbers">
+        <span id="price-tracker-current-image">1</span> of
+        <span id="price-tracker-image-total">1</span>
+      </div>
+      <div id="price-tracker-next-image" class="price-tracker-direction right-direction"> &gt; </div>
     </div>
-    <div id="price-tracker-previous-image" class="price-tracker-direction left-direction"> &lt; </div>
-    <div id="price-tracker-image-numbers">
-      <span id="price-tracker-current-image">1</span> of
-      <span id="price-tracker-image-total">1</span>
-    </div>
-    <div id="price-tracker-next-image" class="price-tracker-direction right-direction"> &gt; </div>
-  </div>
-  <div id="price-tracker-name-block">
-    <div class="price-tracker-row">
-      <label for="price-tracker-product-name">Name</label>
-      <input id="price-tracker-product-name" type="text" value={{title}} name="name" />
-    </div>
-    <div class="price-tracker-row">
-      <label for="note">Note</label>
-      <textarea name="note"></textarea>
+    <div id="price-tracker-name-block">
+      <div class="price-tracker-row">
+        <label for="price-tracker-product-name">Name</label>
+        <input id="price-tracker-product-name" type="text" value={{title}} name="name" />
+      </div>
+      <div class="price-tracker-row">
+        <label for="note">Note</label>
+        <textarea name="note"></textarea>
+      </div> 
+      <div id="price-tracker-price-block" class="price-tracker-row">
+          <div class="label">Current Price</div>
+          <div id="price-tracker-currently-selected-price">{{price}}</div>
+      </div>
+      <div id="price-tracker-notify-me"  class="price-tracker-row">
+        <label for="price-tracker-target-price" class="label">Target Price</label>
+        <div id="price-tracker-price-help">You are notified when price drops to or below this target</div>
+        $<input id="price-tracker-target-price" type="text" value={{discountedPrice}} name="target" /> 
+      </div> 
     </div> 
-    <div id="price-tracker-price-block" class="price-tracker-row">
-        <div class="label">Current Price</div>
-        <div id="price-tracker-currently-selected-price">{{price}}</div>
-    </div>
-    <div id="price-tracker-notify-me"  class="price-tracker-row">
-      <label for="price-tracker-target-price" class="label">Target Price</label>
-      <div id="price-tracker-price-help">You are notified when price drops to or below this target</div>
-      $<input id="price-tracker-target-price" type="text" value={{discountedPrice}} name="target" /> 
+  
+    <div id="price-tracker-actions" class="price-tracker-row">
+      <button type="button">Track this price</button>
     </div> 
-  </div> 
-  <div id="price-tracker-actions" class="price-tracker-row">
-    <button type="button">Track this price</button>
-  </div> 
+  {{else}}
+    <p>
+      The Price Tracker could not find any prices on this page. 
+      If there are some and it missed them, feel free to report a problem 
+      by emailing <a href={{"mailto:issues@thepricetracker.com?subject=Problem finding prices on " + url}}>issues@thepricetracker.com</a>.
+    </p>
+    <div id="price-tracker-actions" class="price-tracker-row">
+      <button type="button" on:click="destroy()">Close</button>
+    </div> 
+  {{/if}}
 </div>
+
+<div>CSS selector: {{cssSelector}}</div>
 
 <div id="price-tracker-overlay" ref:overlay>&nbsp;</div>
 
@@ -45,7 +59,10 @@
     },
 
     ondestroy() {
-     this.get('priceNode').style = this.get('originalStyle');
+      var priceNode = this.get('priceNode');
+      if (priceNode) {
+        priceNode.style = this.get('originalStyle');
+      }     
     }
   };
 </script>

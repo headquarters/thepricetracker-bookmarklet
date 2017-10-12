@@ -381,7 +381,7 @@ var PriceTracker = (function(){
           saveURL += '&target_price=' + targetPrice;
           saveURL += '&css_selector=' + encodeURIComponent(cssSelector);
           saveURL += '&image_src=' + imageSrc;
-          saveURL += '&full_url=' + encodeURIComponent(window.location.href);;
+          saveURL += '&full_url=' + encodeURIComponent(window.location.href);
           
           var encodedURL = encodeURI(saveURL);
    
