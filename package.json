@@ -6,12 +6,14 @@
   "scripts": {
     "start": "node index.js",
     "build": "bookmarklet ./src/bookmarklet.js ./dist/bookmarklet.js",
+    "compile": "svelte compile --format iife ./src/PriceTracker.html > ./dist/PriceTracker.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "Unlicense",
   "devDependencies": {
     "bookmarklet": "0.0.6",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "svelte-cli": "^1.4.0"
   }
 }

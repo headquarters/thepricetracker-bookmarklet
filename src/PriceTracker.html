@@ -1,0 +1,37 @@
+<div id="price-tracker-panel">
+  <button id="price-tracker-close" type="button">Close</button>
+  <div id="price-tracker-title">Add to The Price Tracker</div>
+  <div id="price-tracker-image-block">
+    <div id="price-tracker-image-container">
+      <img src="" alt="No Image" height="100" />
+    </div>
+    <div id="price-tracker-previous-image" class="price-tracker-direction left-direction"> &lt; </div>
+    <div id="price-tracker-image-numbers">
+      <span id="price-tracker-current-image">1</span> of
+      <span id="price-tracker-image-total">1</span>
+    </div>
+    <div id="price-tracker-next-image" class="price-tracker-direction right-direction"> &gt; </div>
+  </div>
+  <div id="price-tracker-name-block">
+    <div class="price-tracker-row">
+      <label for="price-tracker-product-name">Name</label>
+      <input id="price-tracker-product-name" type="text" value={{title}} name="name" />
+    </div>
+    <div class="price-tracker-row">
+      <label for="note">Note</label>
+      <textarea name="note"></textarea>
+    </div> 
+    <div id="price-tracker-price-block" class="price-tracker-row">
+        <div class="label">Current Price</div>
+        <div id="price-tracker-currently-selected-price"></div>
+    </div>
+    <div id="price-tracker-notify-me"  class="price-tracker-row">
+      <label for="price-tracker-target-price" class="label">Target Price</label>
+      <div id="price-tracker-price-help">You are notified when price drops to or below this target</div>
+      $<input id="price-tracker-target-price" type="text" value="" name="target" /> 
+    </div> 
+  </div> 
+  <div id="price-tracker-actions" class="price-tracker-row">
+    <button type="button">Track this price</button>
+  </div> 
+</div>

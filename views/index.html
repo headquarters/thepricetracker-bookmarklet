@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Bookmarklet Test Page</title>
+  <link rel="stylesheet" href="bookmarklet.css" />
+</head>
+<body>
+  <main></main>
+  <a href="${bookmarklet}">Open Bookmarklet</a>
+  <script src="PriceTracker.js"></script>
+  <script>
+    var app = new PriceTracker({
+      target: document.querySelector( 'main' ),
+      data: {
+        title: document.title
+      }
+    });
+  </script>
+</body>  
+</html>
