@@ -8,7 +8,7 @@
     "build": "bookmarklet ./dist/PriceTracker.js ./dist/PriceTrackerBookmarklet.js",
     "compile": "rollup -c rollup.config.js",
     "format": "prettier --write \"{src,test}/**/*.js\"",
-    "test": "mocha --watch --recursive ./test"
+    "test": "mocha --compilers js:babel-core/register --watch --recursive ./test"
   },
   "author": "",
   "license": "Unlicense",
@@ -22,5 +22,9 @@
     "rollup": "^0.50.0",
     "rollup-plugin-svelte": "^3.1.0",
     "svelte-cli": "^1.4.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0"
   }
 }

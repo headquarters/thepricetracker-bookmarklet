@@ -86,4 +86,4 @@ function getTextNodesWithPriceSymbol(node) {
   return textNodes;
 }
 
-module.exports = getTextNodesWithPriceSymbol;
+export default getTextNodesWithPriceSymbol;

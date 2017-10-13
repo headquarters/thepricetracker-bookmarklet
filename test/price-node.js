@@ -1,7 +1,6 @@
-const expect = require("chai").expect;
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const getPriceNodes = require("../src/price-node");
+import { expect } from "chai";
+import { JSDOM } from "jsdom";
+import getPriceNodes from "../src/price-node";
 
 describe("The price-node module", () => {
   it("returns an empty array when no prices were found", () => {
